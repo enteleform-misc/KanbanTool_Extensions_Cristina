@@ -13609,7 +13609,7 @@ class archive_Cards {
 }
 __decorate([
     __Main__1.KanbanTool.KeyBinding({
-        defaultKeys: ["delete"],
+        defaultKeys: ["backspace"],
         options: { preventDefault: true, scope: __Main__2.KeyBinding_Scopes.Card_IsHovered },
     }),
     __metadata("design:type", Function),
@@ -13676,7 +13676,7 @@ class move_Cards {
 }
 exports.move_Cards = move_Cards;
 function _add_KeyBinding(direction) {
-    __Main__1.KeyBinding.add(["ctrl", direction], () => {
+    __Main__1.KeyBinding.add(["shift", direction], () => {
         HoverManager_1.HoverManager.apply_Callback((card) => {
             __Main__3.CardMover.move(card.model, direction);
         });
