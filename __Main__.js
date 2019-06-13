@@ -13003,7 +13003,6 @@ __Main__5.KeyBinding.add(["ctrl", "`"], () => {
 });
 __Main__5.KeyBinding.add(["ctrl", "shift", "`"], () => {
     __Main__3.Show.allColumns();
-    __Main__3.Show.allRows();
     Filter.enable_CardTypes();
 });
 function _set_CardType_States(ids, targetButtons) {
@@ -13552,13 +13551,13 @@ class _ {
     }
 }
 __decorate([
-    __Main__1.KeyBinding.add(["ctrl", "space"], { preventDefault: true, scope: __Main__2.KeyBinding_Scopes.Card_IsHovered }),
+    __Main__1.KeyBinding.add(["`"], { preventDefault: true, scope: __Main__2.KeyBinding_Scopes.Card_IsHovered }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [KeyboardEvent]),
     __metadata("design:returntype", void 0)
 ], _, "toggle_Between_TaskCards_And_TodayCards", null);
 __decorate([
-    __Main__1.KeyBinding.add(["ctrl", "shift", "alt", "space"], { preventDefault: true }),
+    __Main__1.KeyBinding.add(["ctrl", "shift", "alt", "`"], { preventDefault: true }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [KeyboardEvent]),
     __metadata("design:returntype", void 0)
