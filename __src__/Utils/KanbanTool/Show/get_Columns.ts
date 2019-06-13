@@ -1,6 +1,9 @@
 //###  Module  ###//
 import {TaskContainer} from "./TaskContainer"
-import {activeBoard  } from "~/Utils/KanbanTool/__Main__"
+import {KanbanTool   } from "../__Main__"
+
+//###  Aliases  ###//
+const {activeBoard} = KanbanTool
 
 
 //#################//

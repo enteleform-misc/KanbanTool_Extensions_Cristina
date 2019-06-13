@@ -3,29 +3,11 @@ import {TaskToggle} from "../Utils/TaskToggle";
 
 //###  Module  ###//
 import {FunctionBar} from "~/Extensions/FunctionBar/__Main__"
-const {Entry, Position} = FunctionBar
-import {KeyBinding} from "~/Utils/KeyBinding/__Main__"
-import {
-	CardType,
-	Show, Hide,
-} from "~/Utils/KanbanTool/__Main__"
+import {KanbanTool } from "~/Utils/KanbanTool/__Main__"
 
-
-//##############//
-//###  Init  ###//
-//##############//
-
-class KeyBindings{
-
-	@KeyBinding.add(
-		["ctrl", "shift", "alt", "space"],
-		{preventDefault:true}
-	)
-	static convert_TodayCards_To_TaskCards(event){
-		TaskToggle.convert_TodayCards_To_TaskCards()
-	}
-
-}
+//###  Aliases  ###//
+const {Entry, Position     } = FunctionBar
+const {CardType, Show, Hide} = KanbanTool
 
 
 //#####################//

@@ -1,5 +1,6 @@
 //###  Module  ###//
 import {Filter as _Filter} from "./Filter"
+import {KanbanTool       } from "../__Main__"
 import {is_JQuery        } from "~/Utils/is_JQuery"
 
 //###  NPM  ###//
@@ -12,8 +13,8 @@ const $:any = require("jquery")
 
 export class CardType{
 
-	static Filter = _Filter
-	static _cardTypes: CardType[]
+	static Filter     = _Filter
+	static _cardTypes = _get_CardTypes()
 
 	index:   number
 	id:      number
@@ -85,6 +86,22 @@ export class CardType{
 //###############//
 //###  Utils  ###//
 //###############//
+
+function _get_CardTypes(){
+	return KanbanTool.activeBoard.cardTypes().active().map(
+		({attributes}, index) => new CardType({
+			index:   index,
+			id:      attributes.id,
+			name:    attributes.name,
+			bgColor: attributes.color_attrs.rgb,
+			fgColor: (
+				attributes.color_attrs.invert
+				? "#FFF"
+				: "#000"
+			),
+		})
+	)
+}
 
 function _get_CardType_FromProperty(key:string, value:any){
 	const matches =
