@@ -16,54 +16,64 @@ const {CardType, Show, Hide} = KanbanTool
 
 FunctionBar.load( new FunctionBar({
 
-	position: Position.Left,
+	position:        Position.Left,
+	singleContainer: true,
 
 	entryGroups:[
 
-		[
+		{"Today":[
 			new Entry({
-				name: "Show_Rows",
+				name: "Clear",
+				callback: () => {
+					TaskToggle.convert_TodayCards_To_TaskCards()
+				},
+			}),
+		]},
+
+		{"Show":[
+			new Entry({
+				name: "Rows",
 				callback: () => {
 					Show.allRows()
 				},
 			}),
 			new Entry({
-				name: "Show_Columns",
+				name: "Columns",
 				callback: () => {
 					Show.allColumns()
 				},
 			}),
+		]},
+
+		{"Hide":[
 			new Entry({
-				name: "Hide_Rows",
+				name: "Rows",
 				callback: () => {
 					Hide.emptyRows()
 				},
 			}),
 			new Entry({
-				name: "Hide_Columns",
+				name: "Columns",
 				callback: () => {
 					Hide.emptyColumns()
 				},
 			}),
+		]},
+
+		{"Filter":[
 			new Entry({
-				name: "Filter_All",
+				name: "Clear",
 				callback: () => {
 					CardType.Filter.enable_CardTypes()
 				},
 			}),
 			new Entry({
-				name: "Filter_None",
+				name: "All",
 				callback: () => {
 					CardType.Filter.disable_CardTypes()
 				},
 			}),
-			new Entry({
-				name: "Clear_Today",
-				callback: () => {
-					TaskToggle.convert_TodayCards_To_TaskCards()
-				},
-			}),
-		],
+		]},
 
 	],
 
